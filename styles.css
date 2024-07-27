@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.slide {
+    display: none;
+}
+
+#navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 5px 5px;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: steelblue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: none;
+    opacity: .75;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+
+rect {
+    pointer-events: all;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    z-index: 1;
+}
+
+/* New styles for the map */
+#map-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#map {
+    width: 80%;
+    height: 580px;
+    margin-bottom: 20px;
+}
+
+#yearSlider {
+    width: 50%;
+}
+
+#yearLabel {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#tooltip,
+#tooltip2 {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 12px;
+    box-shadow: 0px 0px 5px 0px #aaa;
+}
+
+.hidden {
+    display: none;
+}

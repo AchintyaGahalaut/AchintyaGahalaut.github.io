@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Visualizations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+</head>
+
+<body>
+    <div id="chart-container">
+        <div id="slide1" class="slide">
+            <h1>Average World GDP Per Capita Over Time</h1>
+            <svg id="svg1" width="1200" height="500"></svg>
+            <div id="tooltip"></div>
+        </div>
+
+        <div id="slide2" class="slide">
+            <h1>GDP Per Capita Line Graph Per Country</h1>
+            <label for="country-select1">Select Country:</label>
+            <select id="country-select1"></select>
+            <svg id="svg2" width="960" height="500"></svg>
+        </div>
+
+        <div id="slide6" class="slide">
+            <h1>GDP Per Capita Choropleth Map</h1>
+            <div id="map-container">
+                <div id="map"></div>
+                <input type="range" min="1960" max="2020" value="1960" step="1" id="yearSlider">
+                <label for="yearSlider" id="yearLabel">1960</label>
+            </div>
+            <div id="tooltip2" class="hidden">
+                <p><strong id="country-name"></strong></p>
+                <p>GDP per Capita: <span id="GDP-per-capita"></span></p>
+            </div>
+        </div>
+
+        <div id="navigation">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
