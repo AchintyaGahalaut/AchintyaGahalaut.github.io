@@ -177,9 +177,9 @@ body {
 
 #less_fluctuation {
     position: absolute;
-    top: -58px;
+    top: -40px;
     /* Adjust as needed */
-    left: calc((10/60) * 100%);
+    left: calc((7/60) * 100%);
     /* Position at 1990 */
     width: 2px;
     height: 10px;
@@ -187,13 +187,15 @@ body {
     /* background: black; */
     /* border-right: 1px dashed black; */
     pointer-events: none;
+    white-space: nowrap;
+    color: purple;
 }
 
 #more_fluctuation {
     position: absolute;
-    top: -58px;
+    top: -40px;
     /* Adjust as needed */
-    left: calc((43/60) * 100%);
+    left: calc((35/60) * 100%);
     /* Position at 1990 */
     width: 2px;
     height: 10px;
@@ -201,6 +203,8 @@ body {
     /* background: black; */
     /* border-right: 1px dashed black; */
     pointer-events: none;
+    white-space: nowrap;
+    color: purple;
 }
 
 #yearSlider {
