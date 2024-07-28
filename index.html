@@ -14,13 +14,21 @@
     <div id="chart-container">
         <div id="slide1" class="slide">
             <h1>Average World GDP Per Capita Over Time</h1>
-            <p class="content">Average World GDP has increased over time despite significant economic events like
-                recessions and wars.
-                With the invention of the world wide web during the 1990s and as the world entered the 21st century,
-                we can see major global events start to have a greater impact on
-                average world GDP, whereas similar events did not change the global GDP per capita significantly.
-                Thus, it can be concluded that average economic comfort has increased as a result of global
-                interconnectedness, albeit at the cost of more sensitivity for each country to major economic events.
+            <p class="content">Average world GDP per capita has increased over time despite significant economic events
+                like
+                recessions and wars. As the world entered the 21st century with the invention of the world wide web
+                during the 1990s,
+                we can see how major, global economic events start to have a greater impact on average world GDP,
+                whereas
+                similar
+                events did not change the global GDP per capita significantly before 1990. The web allowed for
+                businesses to
+                reach a
+                global audience, which generally increased economic health indicators like imports, exports, and
+                employment rates, leading to higher GDPs per capita. The web also increased global economic
+                codependency,
+                which
+                is why average world GDP per capita starts to react more to economic events post 1990-1991.
             </p>
             <svg id="svg1" width="1200" height="500"></svg>
             <div id="tooltip"></div>
@@ -28,9 +36,22 @@
 
         <div id="slide2" class="slide">
             <h1>GDP Per Capita Line Graph Per Country</h1>
-            <p class="content">GDP per capita for each country continued to increase. Note that 1990 marks a significant
-                moment in time for each country as around that time, GDP per capita starts to fluctuate more after 1990
-                than before 1990. </p>
+            <p class="content">GDP per capita for each country continued to increase from 1960 to 2023. Note that 1990
+                marks a significant
+                moment in time for each country as, around that time, GDP per capita starts to fluctuate more. This
+                gradual increase
+                in GDP per capita - along with its more emphasized fluctuation after 1990 -
+                can be attributed to the effect of the internet on economic health. Thus, it can be concluded that
+                average
+                economic comfort has increased for each country as a result of global interconnectedness due to the
+                world wide web,
+                albeit at the cost of more
+                sensitivity for each country to major economic events around the globe. Take for example how every
+                country was negatively
+                impacted by the 2008 financial crisis although it started in the United States. This negative impact can
+                be seen
+                through the relative decrease in the GDP per capita in 2009, the year after the 2008 recession.
+            </p>
             <label for="country-select1">Select Country:</label>
             <select id="country-select1"></select>
             <svg id="svg2" width="960" height="500"></svg>
@@ -42,13 +63,22 @@
                 increased.
                 From this, it can be inferred that economic comfort across the world has gradually increased since the
                 1960s. Notice that global trends in GDP per capita start to become more apparent after 1990 as GDP per
-                Capita for each country sees more fluctuation.
+                Capita for each country sees more fluctuation, primarily in first world countries.
             </p>
             <div id="map-container">
                 <div id="map"></div>
                 <div id="slider-container">
                     <input type="range" min="1960" max="2020" value="1960" step="1" id="yearSlider">
-                    <div id="dottedLine1990"></div>
+                    <div id="1990_label">
+                        <p>1990 mark</p>
+                    </div>
+                    <div id="less_fluctuation">
+                        <p>less fluctuation</p>
+                    </div>
+                    <div id="more_fluctuation">
+                        <p>more fluctuation</p>
+                    </div>
+                    <div id="Line1990"></div>
                     <label for="yearSlider" id="yearLabel">1960</label>
                 </div>
                 <div id="tooltip2" class="hidden">

@@ -108,7 +108,7 @@ body {
     margin: 0 auto;
 }
 
-#dottedLine1990 {
+#Line1990 {
     position: absolute;
     top: -5px;
     /* Adjust as needed */
@@ -121,6 +121,49 @@ body {
     border-right: 1px dashed black;
     pointer-events: none;
 }
+
+#1990_label {
+    position: absolute;
+    top: -1px;
+    /* Adjust as needed */
+    left: calc((30/60) * 100%);
+    /* Position at 1990 */
+    width: 2px;
+    height: 10px;
+    /* Adjust as needed */
+    background: black;
+    border-right: 1px dashed black;
+    pointer-events: none;
+}
+
+#less_fluctuation {
+    position: absolute;
+    top: 5px;
+    /* Adjust as needed */
+    left: calc((10/60) * 100%);
+    /* Position at 1990 */
+    width: 2px;
+    height: 10px;
+    /* Adjust as needed */
+    /* background: black; */
+    /* border-right: 1px dashed black; */
+    pointer-events: none;
+}
+
+#more_fluctuation {
+    position: absolute;
+    top: 5px;
+    /* Adjust as needed */
+    left: calc((43/60) * 100%);
+    /* Position at 1990 */
+    width: 2px;
+    height: 10px;
+    /* Adjust as needed */
+    /* background: black; */
+    /* border-right: 1px dashed black; */
+    pointer-events: none;
+}
+
 
 #yearSlider {
     width: 100%;

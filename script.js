@@ -99,7 +99,8 @@ const GDPannotations = [
         x: 870,
         y: 400,
         dy: -120,
-        dx: 0
+        dx: 0,
+        color: "red"
     },
     {
         note: {
@@ -113,7 +114,6 @@ const GDPannotations = [
     },
 
 ];
-
 
 // Add annotation to Average world GDP per Capita over time
 const makeGDPAnnotations = d3.annotation()
@@ -258,8 +258,8 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
 
         tooltip
             .style("display", "block")
-            .style("left", `${xPos + 100}px`)
-            .style("top", `${yPos + 50}px`)
+            .style("left", `${event.pageX + 15}px`)
+            .style("top", `${event.pageY - 15}px`)
             .html(`<strong>Year:</strong> ${d.date.getFullYear()}<br><strong>GDP Per Capita:</strong> $${d.gdp !== undefined ? d.gdp.toFixed(0) : 'N/A'}`)
     });
 
@@ -294,6 +294,8 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
 
 
 
+
+// GDP per Capita line graphs per Country 
 d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
     const parseDate = d3.timeParse("%Y");
     data.forEach(d => {
@@ -348,8 +350,6 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
         .append("div")
         .attr("class", "tooltip");
 
-
-
     function update1(country) {
         const countryData = dataByCountry.get(country);
 
@@ -399,40 +399,71 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
 
         dots1.exit().remove();
 
-        // Variable for the annotation text
-        const annotationTextContent = "Line dividing years that came before 1990 and after 1990";
+        // Annotations for 1990
+        const annotation1990TextContent = "Line dividing years that came before and after 1990";
+        const annotation1990Year = new Date(1990, 0, 1);
 
-        // Add vertical line for 1990
-        const annotationYear = new Date(1990, 0, 1);
+        const annotation1990Line = g1.selectAll(".annotation-1990-line")
+            .data([annotation1990Year]);
 
-        const annotationLine = g1.selectAll(".annotation-line")
-            .data([annotationYear]);
-
-        annotationLine.enter().append("line")
-            .attr("class", "annotation-line")
-            .merge(annotationLine)
-            .attr("x1", x1(annotationYear))
-            .attr("x2", x1(annotationYear))
+        annotation1990Line.enter().append("line")
+            .attr("class", "annotation-1990-line")
+            .merge(annotation1990Line)
+            .attr("x1", x1(annotation1990Year))
+            .attr("x2", x1(annotation1990Year))
             .attr("y1", 0)
             .attr("y2", height)
-            .attr("stroke", "green")
+            .attr("stroke", "purple")
             .attr("stroke-width", 2)
             .attr("stroke-dasharray", "5,5");
 
-        annotationLine.exit().remove();
+        annotation1990Line.exit().remove();
 
-        const annotationText = g1.selectAll(".annotation-text")
-            .data([annotationYear]);
+        const annotation1990Text = g1.selectAll(".annotation-1990-text")
+            .data([annotation1990Year]);
 
-        annotationText.enter().append("text")
-            .attr("class", "annotation-text")
-            .merge(annotationText)
-            .attr("x", x1(annotationYear) + 5)
-            .attr("y", 10)
-            .style("fill", "green")
-            .text(annotationTextContent);
+        annotation1990Text.enter().append("text")
+            .attr("class", "annotation-1990-text")
+            .merge(annotation1990Text)
+            .attr("x", x1(annotation1990Year) - 200)
+            .attr("y", -5)
+            .style("fill", "purple")
+            .text(annotation1990TextContent);
 
-        annotationText.exit().remove();
+        annotation1990Text.exit().remove();
+
+        // Annotations for 2009
+        const annotation2009TextContent = "Effects of 2008 global recession";
+        const annotation2009Year = new Date(2009, 0, 1);
+
+        const annotation2009Line = g1.selectAll(".annotation-2009-line")
+            .data([annotation2009Year]);
+
+        annotation2009Line.enter().append("line")
+            .attr("class", "annotation-2009-line")
+            .merge(annotation2009Line)
+            .attr("x1", x1(annotation2009Year))
+            .attr("x2", x1(annotation2009Year))
+            .attr("y1", 0)
+            .attr("y2", height)
+            .attr("stroke", "red")
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", "5,5");
+
+        annotation2009Line.exit().remove();
+
+        const annotation2009Text = g1.selectAll(".annotation-2009-text")
+            .data([annotation2009Year]);
+
+        annotation2009Text.enter().append("text")
+            .attr("class", "annotation-2009-text")
+            .merge(annotation2009Text)
+            .attr("x", x1(annotation2009Year) - 50)
+            .attr("y", -5)
+            .style("fill", "red")
+            .text(annotation2009TextContent);
+
+        annotation2009Text.exit().remove();
     }
 
     update1(countries[0]);
@@ -443,8 +474,6 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
     });
 
 });
-
-
 
 
 
