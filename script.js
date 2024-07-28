@@ -109,7 +109,7 @@ const GDPannotations = [
         },
         x: 1054,
         y: 400,
-        dy: -370,
+        dy: -365,
         dx: -1
     },
 
