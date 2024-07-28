@@ -95,7 +95,7 @@ body {
 .content {
     margin: 0 auto;
     padding: 10px;
-    max-width: 1000px;
+    max-width: 900px;
     /* Adjust the max-width to your preference */
     text-align: justify;
     /* Optional: for justified text alignment */
