@@ -15,6 +15,7 @@ button {
     padding: 5px 5px;
     font-size: 16px;
     margin: 5px;
+    margin-top: 0px;
 }
 
 .tooltip {
@@ -57,10 +58,18 @@ rect {
     width: 50%;
 }
 
+#year-label-container {
+    position: relative;
+    text-align: center;
+    margin-top: 0px;
+    /* Add some margin to move it down */
+    text-align: left;
+
+}
 
 #yearLabel {
-    margin-top: 10px;
     font-size: 18px;
+    display: inline-block;
 }
 
 #tooltip,
@@ -79,7 +88,6 @@ rect {
 .hidden {
     display: none;
 }
-
 
 /* ------------------------------------------------------------ */
 
@@ -122,23 +130,54 @@ body {
     pointer-events: none;
 }
 
-#1990_label {
+#label_1990 {
     position: absolute;
-    top: -1px;
+    top: 10px;
     /* Adjust as needed */
-    left: calc((30/60) * 100%);
+    left: calc((27.5/60) * 100%);
     /* Position at 1990 */
     width: 2px;
     height: 10px;
+    /* Adjust as needed */
+    /* background: black; */
+    /* border-right: 1px dashed black; */
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#Line2009 {
+    position: absolute;
+    top: -5px;
+    /* Adjust as needed */
+    left: calc((48/60) * 100%);
+    /* Position at 1990 */
+    width: 2px;
+    height: 30px;
     /* Adjust as needed */
     background: black;
     border-right: 1px dashed black;
     pointer-events: none;
 }
 
+
+#label_2009 {
+    position: absolute;
+    top: 10px;
+    /* Adjust as needed */
+    left: calc((45/60) * 100%);
+    /* Position at 1990 */
+    width: 2px;
+    height: 10px;
+    /* Adjust as needed */
+    /* background: black;
+    border-right: 1px dashed black; */
+    pointer-events: none;
+    white-space: nowrap;
+}
+
 #less_fluctuation {
     position: absolute;
-    top: 5px;
+    top: -58px;
     /* Adjust as needed */
     left: calc((10/60) * 100%);
     /* Position at 1990 */
@@ -152,7 +191,7 @@ body {
 
 #more_fluctuation {
     position: absolute;
-    top: 5px;
+    top: -58px;
     /* Adjust as needed */
     left: calc((43/60) * 100%);
     /* Position at 1990 */
@@ -164,12 +203,6 @@ body {
     pointer-events: none;
 }
 
-
 #yearSlider {
     width: 100%;
-}
-
-#yearLabel {
-    margin-top: 10px;
-    font-size: 18px;
 }

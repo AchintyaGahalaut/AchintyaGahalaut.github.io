@@ -63,23 +63,34 @@
                 increased.
                 From this, it can be inferred that economic comfort across the world has gradually increased since the
                 1960s. Notice that global trends in GDP per capita start to become more apparent after 1990 as GDP per
-                Capita for each country sees more fluctuation, primarily in first world countries.
+                Capita for each country sees more fluctuation, primarily in first world countries. Note how the
+                2008-2009
+                recession causes world GDP per capita to decrease (use arrow keys to switch between 2008 and 2009).
             </p>
             <div id="map-container">
                 <div id="map"></div>
                 <div id="slider-container">
                     <input type="range" min="1960" max="2020" value="1960" step="1" id="yearSlider">
-                    <div id="1990_label">
-                        <p>1990 mark</p>
+                    <div id="label_1990">
+                        <p>1990: internet</p>
                     </div>
+                    <div id="Line1990"></div>
+
+                    <div id="label_2009">
+                        <p>2008-2009 recession</p>
+                    </div>
+                    <div id="Line2009"></div>
+                    <div id="Line2008"></div>
+
                     <div id="less_fluctuation">
                         <p>less fluctuation</p>
                     </div>
                     <div id="more_fluctuation">
                         <p>more fluctuation</p>
                     </div>
-                    <div id="Line1990"></div>
-                    <label for="yearSlider" id="yearLabel">1960</label>
+                    <div id="year-label-container">
+                        <label for="yearSlider" id="yearLabel">1960</label>
+                    </div>
                 </div>
                 <div id="tooltip2" class="hidden">
                     <p><strong id="country-name"></strong></p>
