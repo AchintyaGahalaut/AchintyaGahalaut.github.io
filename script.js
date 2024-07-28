@@ -400,7 +400,7 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
         dots1.exit().remove();
 
         // Variable for the annotation text
-        const annotationTextContent = "Line dividing years the came before 1990 and after 1990";
+        const annotationTextContent = "Line dividing years that came before 1990 and after 1990";
 
         // Add vertical line for 1990
         const annotationYear = new Date(1990, 0, 1);
