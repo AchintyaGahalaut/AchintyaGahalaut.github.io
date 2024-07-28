@@ -55,20 +55,20 @@ const GDPannotations = [
             label: "Gulf War",
             title: "1990 - 1991"
         },
-        x: 570,
+        x: 555,
         y: 400,
-        dy: -10,
-        dx: 0
+        dy: -20,
+        dx: 4
     },
     {
         note: {
             label: "Invention and Deployment of the World Wide Web",
             title: "1990-1991"
         },
-        x: 570,
+        x: 555,
         y: 400,
         dy: -250,
-        dx: -10,
+        dx: 0,
         color: "green"
     },
     {
@@ -78,8 +78,8 @@ const GDPannotations = [
         },
         x: 690,
         y: 400,
-        dy: -250,
-        dx: 0
+        dy: -300,
+        dx: 10
     },
     {
         note: {
@@ -104,13 +104,13 @@ const GDPannotations = [
     },
     {
         note: {
-            label: "Brexit Referendum",
-            title: "2016"
+            label: "Significant volatility in global stock markets",
+            title: "2018"
         },
-        x: 1018,
+        x: 1054,
         y: 400,
-        dy: -250,
-        dx: 0
+        dy: -370,
+        dx: -1
     },
 
 ];
@@ -290,6 +290,28 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
     // Append annotations after the 1st line chart is rendered
     svg.append("g")
         .call(makeGDPAnnotations);
+
+    // Append a vertical line at the year 1990
+    svg.append("line")
+        .attr("x1", x(new Date(1990, 0, 1)))
+        .attr("x2", x(new Date(1990, 0, 1)))
+        .attr("y1", 0)
+        .attr("y2", height)
+        .attr("stroke", "purple")
+        .attr("stroke-dasharray", "4,4") // Dotted line
+        .attr("stroke-width", 2); // Increased stroke width to make it bold
+
+    // Append text over the vertical line
+    svg.append("text")
+        .attr("x", x(new Date(1990, 0, 1)))
+        .attr("y", -10) // Adjust this value to position the text above the line
+        .attr("text-anchor", "middle")
+        .attr("fill", "purple")
+        .style("font-size", "12px")
+        .style("font-family", "sans-serif")
+        .style("font-weight", "bold") // Added font weight to make the text bold
+        .text("1990");
+
 });
 
 
