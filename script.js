@@ -553,8 +553,8 @@ Promise.all([
     console.log("Common Country Codes:", commonCountryCodes);
 
     const colorScale = d3.scaleLinear()
-        .domain([0, 90000])
-        .range(["#e5f5e0", "#00441b"]);
+        .domain([0, 50000])
+        .range(["#ffffff", "#00441b"]); // first: #e5f5e0
 
     function colorCountry(d) {
         if (!commonCountryCodes.has(d.id)) return "#ccc";
