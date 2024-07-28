@@ -42,7 +42,7 @@ const GDPannotations = [
     },
     {
         note: {
-            label: "Black Monday: Stock market crash",
+            label: "Black Monday: Global stock market crash",
             title: "1987"
         },
         x: 490,
@@ -453,6 +453,7 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
             .text(annotation1990TextContent);
 
         annotation1990Text.exit().remove();
+
 
         // Annotations for 2009
         const annotation2009TextContent = "Effects of 2008 global recession";
