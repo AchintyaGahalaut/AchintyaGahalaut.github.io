@@ -107,7 +107,7 @@ const GDPannotations = [
             label: "Brexit Referendum",
             title: "2016"
         },
-        x: 999,
+        x: 1018,
         y: 400,
         dy: -250,
         dx: 0
