@@ -165,7 +165,7 @@ body {
     position: absolute;
     top: 10px;
     /* Adjust as needed */
-    left: calc((45/60) * 100%);
+    left: calc((43/60) * 100%);
     /* Position at 1990 */
     width: 2px;
     height: 10px;
@@ -197,7 +197,7 @@ body {
     position: absolute;
     top: 10px;
     /* Adjust as needed */
-    left: calc((7/60) * 100%);
+    left: calc((10/60) * 100%);
     /* Position at 1990 */
     width: 2px;
     height: 10px;
