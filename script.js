@@ -32,13 +32,14 @@ const GDPannotations = [
     },
     {
         note: {
-            label: "Recession: Tight monetary policies to combat inflation leads to one of most sever economic downturns since Great Depression",
-            title: "1982"
+            label: "Early 1980s Recession: Tight monetary policies to combat inflation leads to one of most sever economic downturns since Great Depression",
+            title: "1981-1982"
         },
         x: 400,
         y: 400,
         dy: -150,
-        dx: -30
+        dx: -30,
+        color: "red"
     },
     {
         note: {
@@ -421,8 +422,43 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
 
         dots1.exit().remove();
 
+
         // Annotations for 1990
-        const annotation1990TextContent = "Line dividing years that came before and after 1990";
+        const annotation1980sTextContent = "Effects of Early 1980s Recession";
+        const annotation1980sYear = new Date(1982, 0, 1);
+
+        const annotation1980sLine = g1.selectAll(".annotation-1980s-line")
+            .data([annotation1980sYear]);
+
+        annotation1980sLine.enter().append("line")
+            .attr("class", "annotation-1980s-line")
+            .merge(annotation1980sLine)
+            .attr("x1", x1(annotation1980sYear))
+            .attr("x2", x1(annotation1980sYear))
+            .attr("y1", 0)
+            .attr("y2", height)
+            .attr("stroke", "red")
+            .attr("stroke-width", 2)
+            .attr("stroke-dasharray", "5,5");
+
+        annotation1980sLine.exit().remove();
+
+        const annotation1980sText = g1.selectAll(".annotation-1980s-text")
+            .data([annotation1980sYear]);
+
+        annotation1980sText.enter().append("text")
+            .attr("class", "annotation-1980s-text")
+            .merge(annotation1980sText)
+            .attr("x", x1(annotation1980sYear) - 210)
+            .attr("y", -5)
+            .style("fill", "red")
+            .text(annotation1980sTextContent);
+
+        annotation1980sText.exit().remove();
+
+
+        // Annotations for 1990
+        const annotation1990TextContent = "Line dividing pre-1990 and post-1990";
         const annotation1990Year = new Date(1990, 0, 1);
 
         const annotation1990Line = g1.selectAll(".annotation-1990-line")
@@ -447,7 +483,7 @@ d3.csv("Edited_GDP_per_capita_the_world_bank.csv").then(data => {
         annotation1990Text.enter().append("text")
             .attr("class", "annotation-1990-text")
             .merge(annotation1990Text)
-            .attr("x", x1(annotation1990Year) - 200)
+            .attr("x", x1(annotation1990Year) - 70)
             .attr("y", -5)
             .style("fill", "purple")
             .text(annotation1990TextContent);
